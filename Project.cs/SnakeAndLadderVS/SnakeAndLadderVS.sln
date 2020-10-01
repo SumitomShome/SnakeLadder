@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnakeAndLadderVS", "SnakeAndLadderVS\SnakeAndLadderVS.csproj", "{3E5F1666-FC11-4511-A2A8-1C0FB0F7F587}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UC2", "UC2\UC2.csproj", "{90117AE2-202E-42D1-ACE9-E2C05C2F9802}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UC2", "UC2\UC2.csproj", "{90117AE2-202E-42D1-ACE9-E2C05C2F9802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UC3", "UC3\UC3.csproj", "{E47A2741-BD3F-472C-AA04-3A7E65C0EAFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{90117AE2-202E-42D1-ACE9-E2C05C2F9802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90117AE2-202E-42D1-ACE9-E2C05C2F9802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90117AE2-202E-42D1-ACE9-E2C05C2F9802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47A2741-BD3F-472C-AA04-3A7E65C0EAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47A2741-BD3F-472C-AA04-3A7E65C0EAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47A2741-BD3F-472C-AA04-3A7E65C0EAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47A2741-BD3F-472C-AA04-3A7E65C0EAFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
