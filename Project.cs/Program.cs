@@ -10,7 +10,7 @@ namespace SnakeAndLadder
             int currentPosition = 0;
             Console.WriteLine("Starting position is : " + currentPosition);
             Random random = new Random();
-            int numberOnDie = random.Next(0, 7);
+            int numberOnDie = random.Next(1, 7);
             Console.WriteLine("Number on the die rolled is : " + numberOnDie);
             Console.ReadKey();
         }
