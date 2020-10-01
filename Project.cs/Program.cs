@@ -6,6 +6,8 @@ namespace SnakeAndLadder
         public const int NoPlay = 0;
         public const int Ladder = 1;
         public const int Snake = 2;
+        public const int StartPosition = 0;
+        public const int WinningPosition = 100;
         public static int rollDie()
         {
             Random random = new Random();
@@ -20,15 +22,12 @@ namespace SnakeAndLadder
             switch (optionCheck)
             {
                 case NoPlay:
-                    Console.WriteLine("No play!");
                     break;
                 case Ladder:
                     addNumber = numberOnDie;
-                    Console.WriteLine("Ladder, so moving forward!");
                     break;
                 case Snake:
                     addNumber = -numberOnDie;
-                    Console.WriteLine("Snake, so moving backward!");
                     break;
             }
             return addNumber;
@@ -38,15 +37,27 @@ namespace SnakeAndLadder
             Console.WriteLine("Welcome to Snake and Ladder Problem!");
             //Initializing
             int currentPosition = 0;
-            Console.WriteLine("Starting position is : " + currentPosition);
-            Random random = new Random();
-            int numberOnDie = random.Next(1, 7);
-            Console.WriteLine("Number on the die rolled is : " + numberOnDie);
+            int nextPosition;
+            int count = 0;
             int numberOnDie = rollDie();
-            Console.WriteLine("Number on the die rolled is : " +numberOnDie);
-            Console.WriteLine("New position is: " + newPosition(numberOnDie));
+            while (currentPosition < WinningPosition)
+            {
+                numberOnDie = rollDie();
+                count++;
+                int addNumber = newPosition(numberOnDie);
+                nextPosition = currentPosition + addNumber;
+                if (nextPosition <0)
+                {
+                    currentPosition = 0;
+                }
+                else
+                {
+                    currentPosition = nextPosition;
+                }
+            }
+            Console.WriteLine("Number of times the die rolled is : " + count);
+            Console.WriteLine("Final position is: " + currentPosition);
             Console.ReadKey();
         }
     }
 }
-
