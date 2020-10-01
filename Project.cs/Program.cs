@@ -3,66 +3,54 @@ namespace SnakeAndLadder
 {
     class Program
     {
-        public const int NoPlay = 0;
-        public const int Ladder = 1;
-        public const int Snake = 2;
-        public const int StartPosition = 0;
-        public const int WinningPosition = 100;
-        public static int rollDie()
+       static void Main(string[] args)
         {
-            Random random = new Random();
-            int numberOnDie = random.Next(1, 7);
-            return numberOnDie;
-        }
-        public static int newPosition(int numberOnDie)
-        {
-            int addNumber = 0;
-            Random random = new Random();
-            int optionCheck = random.Next(0, 3);
-            switch (optionCheck)
-            {
-                case NoPlay:
-                    break;
-                case Ladder:
-                    addNumber = numberOnDie;
-                    break;
-                case Snake:
-                    addNumber = -numberOnDie;
-                    break;
-            }
-            return addNumber;
-        }
-        static void Main(string[] args)
-        {
+            const int noPlay = 0;
+            const int Ladder = 1;
+            const int Snake = 2;
+            const int WinningPosition = 100;
             Console.WriteLine("Welcome to Snake and Ladder Problem!");
-            //Initializing
-            int currentPosition = 0;
-            int nextPosition;
+            int player = 0;
+            int[] playerPosition = new int[2] { 0, 0 };
             int count = 0;
-            int numberOnDie = rollDie();
-            while (currentPosition < WinningPosition)
+            while (playerPosition[player] < WinningPosition)
             {
-                numberOnDie = rollDie();
+                Random random = new Random();
+                int numberOnDie = random.Next(1, 7);
                 count++;
-                int addNumber = newPosition(numberOnDie);
-                nextPosition = currentPosition + addNumber;
-                if (nextPosition <0)
+                int optionCheck = random.Next(0, 3);
+                switch (optionCheck)
                 {
-                    currentPosition = 0;
+                    case noPlay:
+                        break;
+                    case Ladder:
+                        if (playerPosition[player] + numberOnDie <= 100)
+                        {
+                            playerPosition[player] = playerPosition[player] + numberOnDie;
+                        }
+                        break;
+                    case Snake:
+                        if (playerPosition[player] < 0)
+                        {
+                            playerPosition[player] = 0;
+                        }
+                        break;
                 }
-     		 else if (nextPosition > WinningPosition)
+                if (optionCheck == noPlay || optionCheck == Snake)
                 {
-                    nextPosition = currentPosition;
+                    if (player == 0)
+                    {
+                        player = 1;
+                    }
+                    else
+                    {
+                        player = 0;
+                    }
                 }
-                else
-                {
-                    currentPosition = nextPosition;
-                }
-                Console.WriteLine("Position after" +count + "  die roll: " +nextPosition);
             }
-            Console.WriteLine("Number of times the die rolled is : " + count);
-            Console.WriteLine("Final position is: " + currentPosition);
-            Console.ReadKey();
+                Console.WriteLine("Player : " + player + " wins the die roll:" + count);
+                Console.ReadKey();
         }
     }
+
 }
