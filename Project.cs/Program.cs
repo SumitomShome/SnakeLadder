@@ -50,6 +50,10 @@ namespace SnakeAndLadder
                 {
                     currentPosition = 0;
                 }
+     		 else if (nextPosition > WinningPosition)
+                {
+                    nextPosition = currentPosition;
+                }
                 else
                 {
                     currentPosition = nextPosition;
