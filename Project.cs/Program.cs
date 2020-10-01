@@ -38,17 +38,13 @@ namespace SnakeAndLadder
             Console.WriteLine("Welcome to Snake and Ladder Problem!");
             //Initializing
             int currentPosition = 0;
-<<<<<<< HEAD
             Console.WriteLine("Starting position is : " + currentPosition);
             Random random = new Random();
             int numberOnDie = random.Next(1, 7);
             Console.WriteLine("Number on the die rolled is : " + numberOnDie);
-=======
-            Console.WriteLine("Starting position: " + currentPosition);
             int numberOnDie = rollDie();
             Console.WriteLine("Number on the die rolled is : " +numberOnDie);
             Console.WriteLine("New position is: " + newPosition(numberOnDie));
->>>>>>> UC3-Option
             Console.ReadKey();
         }
     }
