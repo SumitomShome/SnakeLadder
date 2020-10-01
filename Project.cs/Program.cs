@@ -58,6 +58,7 @@ namespace SnakeAndLadder
                 {
                     currentPosition = nextPosition;
                 }
+                Console.WriteLine("Position after" +count + "  die roll: " +nextPosition);
             }
             Console.WriteLine("Number of times the die rolled is : " + count);
             Console.WriteLine("Final position is: " + currentPosition);
